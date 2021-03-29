@@ -1,23 +1,32 @@
 package br.com.erudio.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name="person")
 public class Person implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "first_name", nullable = false, length = 80)
     private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 80)
     private String lastName;
+
+    @Column(nullable = false, length = 100)
     private String address;
-    private String genrer;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(nullable = false, length = 6)
+    private String gender;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
     public String getFirstName() {
         return firstName;
@@ -43,12 +52,12 @@ public class Person implements Serializable {
         this.address = address;
     }
 
-    public String getGenrer() {
-        return genrer;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenrer(String genrer) {
-        this.genrer = genrer;
+    public void setGender(String genrer) {
+        this.gender = genrer;
     }
 
     @Override
@@ -60,11 +69,11 @@ public class Person implements Serializable {
                 Objects.equals(firstName, person.firstName) &&
                 Objects.equals(lastName, person.lastName) &&
                 Objects.equals(address, person.address) &&
-                Objects.equals(genrer, person.genrer);
+                Objects.equals(gender, person.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, address, genrer);
+        return Objects.hash(id, firstName, lastName, address, gender);
     }
 }

@@ -1,7 +1,7 @@
 package br.com.erudio.converter;
 
 import br.com.erudio.data.model.Person;
-import br.com.erudio.data.vo.PersonVO;
+import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.mocks.MockPerson;
 import org.junit.Assert;
 import org.junit.Before;

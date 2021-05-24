@@ -1,7 +1,7 @@
 package br.com.erudio.mocks;
 
 import br.com.erudio.data.model.Person;
-import br.com.erudio.data.vo.PersonVO;
+import br.com.erudio.data.vo.v1.PersonVO;
 
 import java.util.ArrayList;
 import java.util.List;
